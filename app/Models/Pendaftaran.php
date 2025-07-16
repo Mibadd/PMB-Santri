@@ -8,18 +8,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Pendaftaran extends Model
 {
+    // Cukup satu 'use HasFactory'
     use HasFactory;
 
     /**
-     * Mass Assignment
-     * Mengizinkan semua field untuk diisi secara massal kecuali 'id'.
-     * Ini memudahkan saat menyimpan data dari form.
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
      */
     protected $guarded = ['id'];
 
     /**
-     * Mendefinisikan relasi "belongsTo" ke model User.
-     * Artinya, setiap data Pendaftaran pasti dimiliki oleh satu User.
+     * Mendapatkan data user yang memiliki pendaftaran ini.
      */
     public function user(): BelongsTo
     {
