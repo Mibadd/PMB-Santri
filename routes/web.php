@@ -10,6 +10,7 @@ Route::redirect('/', '/register');
 // Rute dashboard tetap sama
 Route::get('/dashboard', function () {
     return view('dashboard');
+// 👇 Middleware 'verified' sudah ada secara default dari Breeze
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Grup rute yang memerlukan login
