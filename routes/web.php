@@ -5,13 +5,20 @@ use App\Http\Controllers\PendaftaranController;
 use Illuminate\Support\Facades\Route;
 
 // Mengalihkan halaman utama langsung ke halaman registrasi
-Route::redirect('/', '/register');
+Route::redirect('/', '/login');
 
 // Rute dashboard tetap sama
 Route::get('/dashboard', function () {
     return view('dashboard');
 // 👇 Middleware 'verified' sudah ada secara default dari Breeze
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard'); // Arahkan ke view dashboard admin
+    })->name('dashboard');
+    // Tambahkan rute admin lainnya di sini
+});
 
 // Grup rute yang memerlukan login
 Route::middleware('auth')->group(function () {
