@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('admin-template/css/style.css') }}">
+    @vite(['resources/css/admin.css', 'resources/js/admin.js'])
 </head>
 <body>
     <div class="flex h-screen overflow-hidden">
@@ -18,6 +18,6 @@
             </main>
         </div>
     </div>
-    <script src="{{ asset('AdminTemplate/js/index.js') }}"></script>
+    <script src="{{ asset('AdminTemplate/js/bundle.js') }}"></script>
 </body>
 </html>

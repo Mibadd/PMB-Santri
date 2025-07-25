@@ -5,7 +5,9 @@ use App\Http\Controllers\PendaftaranController;
 use Illuminate\Support\Facades\Route;
 
 // Mengalihkan halaman utama langsung ke halaman registrasi
-Route::redirect('/', '/login');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Rute dashboard tetap sama
 Route::get('/dashboard', function () {
