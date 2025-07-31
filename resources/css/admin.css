@@ -16,6 +16,7 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
     button:not(:disabled),
     [role="button"]:not(:disabled) {
         cursor: pointer;
@@ -91,6 +92,7 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
     .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -99,9 +101,11 @@
     .custom-scrollbar::-webkit-scrollbar {
         @apply size-1.5;
     }
+
     .custom-scrollbar::-webkit-scrollbar-track {
         @apply rounded-full;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb {
         @apply bg-gray-200 rounded-full;
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,9 +17,8 @@
   <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
-  <!-- Laravel Vite CSS -->
-  @vite('resources/css/app.css')
 </head>
+
 <body>
 
   {{-- Preloader --}}
@@ -27,8 +27,12 @@
       <div class="spinner">
         <div class="spinner-container">
           <div class="spinner-rotator">
-            <div class="spinner-left"><div class="spinner-circle"></div></div>
-            <div class="spinner-right"><div class="spinner-circle"></div></div>
+            <div class="spinner-left">
+              <div class="spinner-circle"></div>
+            </div>
+            <div class="spinner-right">
+              <div class="spinner-circle"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -45,8 +49,9 @@
               <a class="navbar-brand" href="#">
                 <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo">
               </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
@@ -79,7 +84,8 @@
         <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-10">
           <div class="hero-content">
             <h1>You are using free lite version of <span>Blaze</span></h1>
-            <p>Please, purchase full version of the template to get all sections, elements and permission to remove footer credits.</p>
+            <p>Please, purchase full version of the template to get all sections, elements and permission to remove
+              footer credits.</p>
             <a href="#buy" class="main-btn btn-hover">Buy Now</a>
           </div>
         </div>
@@ -97,12 +103,12 @@
     <div class="container">
       <div class="row align-items-center">
         @foreach (['graygrids', 'lineicons', 'uideck', 'pagebulb'] as $brand)
-          <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="single-brands">
-              <img src="{{ asset('assets/images/brands/' . $brand . '.svg') }}" alt="{{ $brand }}">
-            </div>
-          </div>
-        @endforeach
+      <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="single-brands">
+        <img src="{{ asset('assets/images/brands/' . $brand . '.svg') }}" alt="{{ $brand }}">
+        </div>
+      </div>
+    @endforeach
       </div>
     </div>
   </section>
@@ -130,7 +136,7 @@
   {{-- Init WOW Animation --}}
   <script> new WOW().init(); </script>
 
-  {{-- Laravel Vite JS --}}
-  @vite('resources/js/app.js')
+
 </body>
+
 </html>
