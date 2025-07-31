@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\AdminPendaftarController; // <-- 1. Tambahkan import controller admin
 use Illuminate\Support\Facades\Route;
 
 // Mengalihkan halaman utama langsung ke halaman registrasi
@@ -25,6 +26,25 @@ Route::middleware('auth')->group(function () {
     Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
 });
 
+
+// 2. TAMBAHKAN BLOK INI UNTUK RUTE ADMIN
+// ===================================================
+Route::middleware(['auth', 'verified', 'is.admin'])->prefix('admin')->name('admin.')->group(function () {
+    
+    // Route untuk dashboard admin
+    Route::get('/dashboard', function () {
+        // Nanti kita akan buat view ini
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    // Route untuk mengelola pendaftar
+    Route::get('/pendaftar', [AdminPendaftarController::class, 'index'])->name('pendaftar.index');
+    
+    // Anda bisa menambahkan rute lain untuk admin di sini
+    // Contoh: Route::get('/pendaftar/{id}', [AdminPendaftarController::class, 'show'])->name('pendaftar.show');
+
+});
+// ===================================================
 
 
 require __DIR__.'/auth.php';

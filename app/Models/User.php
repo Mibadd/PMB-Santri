@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Notifications\CustomVerifyEmail; // Import notifikasi kustom kita
+use App\Notifications\CustomVerifyEmail; 
 
 // 2. Tambahkan 'implements MustVerifyEmail'
 class User extends Authenticatable implements MustVerifyEmail
